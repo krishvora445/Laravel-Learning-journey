@@ -6,12 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <h1>This is about page</h1>
+
     <div>
-        <a href="/about">About</a>
-    </div>
-    <div>
-        <a href="/contact">contact us</a>
+        <a href= "/">Return Home</a>
     </div>
 </body>
 </html>
