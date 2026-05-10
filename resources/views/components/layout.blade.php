@@ -1,6 +1,5 @@
 @props([
-    'title' => 'krish' //now  if I  doesn't pass to a title in a like a  view page, then it defaults to a krish.
-
+    'title' => 'krish',
 ])
 
 
@@ -17,11 +16,23 @@
             padding: 0;
         }
 
+        .max-w-400 {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        .card {
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+
           nav {
               background-color: #f5f5f5;
               padding: 12px 20px;
               border-radius: 12px;
-/*               box-shadow: 0 2px 8px rgba(0,0,0,0.1); */
+              /* box-shadow: 0 2px 8px rgba(0,0,0,0.1); */
           }
 
           nav ul {
@@ -47,27 +58,6 @@
              color: white;
              transform: translateY(-2px);
          }
-
-         /* FIXED: now outside hover */
-
-         .max-w-400 {
-             max-width: 400px;
-             margin: auto;
-         }
-
-         .card {
-             display: flex;
-             justify-content: center;
-             align-items: center;
-             max-width: 24rem;
-             height: 150px;
-             padding: 24px;
-             border: 1px solid #e5e7eb;
-             border-radius: 8px;
-             background-color: #f5f5f5;
-             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-             text-decoration: none;
-         }
     </style>
 </head>
 <body>
@@ -81,7 +71,7 @@
 
 
     <main>
-        {{$slot}}
+            {{ $slot }}
     </main>
 </body>
 </html>
