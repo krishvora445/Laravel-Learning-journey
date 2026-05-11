@@ -1,41 +1,48 @@
 <?php
-
+use \Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Models\Idea;
 
 
 
 Route::get('/', function () {
 //    return view('ideas');
 
-    $ideas = session()->get('ideas', []); // we fatch idea from session
+//method 1 to access data from database
+//    $ideas  = DB::table('ideas')->get();
 
+//     $ideas = Idea::where('state', 'pending')->get();
+     $ideas = Idea::query()->when(request('state'), function ($query, $state) {
+         $query->where('state', $state);
+     })->get();
+
+//     $ideas = Idea::find(1);
+//
+//     dd($ideas);
+//     return $ideas;
+
+
+
+//    return $ideas[0]->description ;
 //    dd($ideas);
 
     return view('ideas', ['ideas' => $ideas]);
 });
 
 Route::post('/ideas', function () {
-//    dd(request()->all());
-//    dd(request('idea'));
 
-    $idea = request('idea'); // we just fatch idea form post reqvest
 
-    session()->push('ideas', $idea  ); // we put idea in to session
+    // we just fatch idea form post reqvest
+
+    Idea::create([
+        'description' => request('idea'),
+        'state' => 'pending',
+    ]);
 
     return redirect('/');
 });
 
-//Route::post('/ideas', function () {
-//
-////    $ideas = \Illuminate\Support\Facades\Request::input('ideas');
-//
-//});
 
-//Route::post('/ideas', function (Request $request) {
-//
-//    $request->idea;
-//
-//});
 
 //only tempreory del
 
