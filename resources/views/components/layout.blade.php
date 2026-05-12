@@ -13,14 +13,24 @@
         src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
     </script>
     <style>
-            html, body {
-            font-family: sans-serif;
+        *, *::before, *::after {
+            border-radius: 0 !important;
+        }
+
+        html, body {
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            /*min-height: 100vh;*/
             max-height: 100%;
-            background: #f3f4f6 !important;
-            color: #111827;
+            background: #000 !important;
+            color: #fff;
+        }
+
+        body {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
 
         .max-w-400 {
@@ -30,9 +40,8 @@
 
         .card {
             padding: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            background-color: #fff;
+            background-color: #000;
+            border: 1px solid #fff;
         }
 
         .site-nav {
@@ -50,12 +59,8 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            border-radius: 24px;
-            background: rgba(255, 255, 255, 0.72);
-            border: 1px solid rgba(148, 163, 184, 0.22);
-            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            background: #000;
+            border: 1px solid #fff;
         }
 
         .site-nav__brand {
@@ -63,13 +68,12 @@
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            color: #111827;
+            color: #fff;
             font-weight: 800;
             letter-spacing: 0.02em;
             padding: 6px 10px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.45);
-            border: 1px solid rgba(148, 163, 184, 0.16);
+            background: #000;
+            border: 1px solid #fff;
         }
 
         .site-nav__logo {
@@ -77,11 +81,10 @@
             height: 38px;
             display: grid;
             place-items: center;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #111827, #4f46e5);
-            color: #fff;
+            background: #fff;
             font-size: 0.95rem;
-            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.22);
+            color: #000;
+            border: 1px solid #fff;
         }
 
         .site-nav__links {
@@ -100,27 +103,22 @@
             align-items: center;
             justify-content: center;
             padding: 10px 16px;
-            border-radius: 999px;
             text-decoration: none;
-            color: #334155;
+            color: #fff;
             font-weight: 600;
             transition: all 0.2s ease;
-            border: 1px solid rgba(148, 163, 184, 0.16);
-            background: rgba(255, 255, 255, 0.5);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+            border: 1px solid #fff;
+            background: #000;
         }
 
         .site-nav__links a:hover {
-            background: rgba(238, 242, 255, 0.92);
-            color: #1e1b4b;
-            border-color: rgba(199, 210, 254, 0.9);
-            transform: translateY(-1px);
+            background: #fff;
+            color: #000;
         }
 
         .site-nav__links a.is-active {
-            background: linear-gradient(135deg, #111827, #4338ca);
-            color: #ffffff;
-            box-shadow: 0 10px 20px rgba(17, 24, 39, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+            background: #fff;
+            color: #000;
         }
 
         main {
@@ -131,13 +129,9 @@
 
         .page-surface {
             min-height: calc(100vh - 140px);
-            border-radius: 32px;
             padding: clamp(28px, 4vw, 56px);
-            background: #1c2a3e;
-            border: 1px solid rgb(41 45 50 / 0.18);
-            box-shadow: 0 30px 70px rgba(15, 23, 42, 0.1);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: #000;
+            border: 1px solid #fff;
         }
 
         .page-hero {
@@ -155,14 +149,13 @@
             display: grid;
             gap: 14px;
             padding: 20px;
-            border-radius: 24px;
-            background: linear-gradient(135deg, rgb(6 12 25 / 0.95), rgb(40 38 55 / 0.9));
+            background: #000;
             color: #fff;
-            box-shadow: 0 18px 38px rgba(17, 24, 39, 0.14);
+            border: 1px solid #fff;
         }
 
         .page-hero__panel small {
-            color: rgba(255, 255, 255, 0.78);
+            color: rgba(255, 255, 255, 0.85);
             font-size: 0.88rem;
             letter-spacing: 0.03em;
         }
@@ -175,9 +168,8 @@
 
         .page-stat {
             padding: 14px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: #000;
+            border: 1px solid #fff;
         }
 
         .page-stat strong {
@@ -187,7 +179,7 @@
         }
 
         .page-stat span {
-            color: rgba(255, 255, 255, 0.76);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 0.9rem;
         }
 
@@ -196,12 +188,12 @@
             align-items: center;
             gap: 8px;
             padding: 8px 14px;
-            border-radius: 999px;
-            background: rgba(238, 242, 255, 0.95);
-            color: #4338ca;
+            background: #fff;
+            color: #000;
             font-size: 0.9rem;
             font-weight: 700;
             letter-spacing: 0.02em;
+            border: 1px solid #fff;
         }
 
         .page-hero h1 {
@@ -213,7 +205,7 @@
 
         .page-hero p {
             margin: 14px 0 0;
-            color: #475569;
+            color: rgba(255, 255, 255, 0.88);
             font-size: 1.02rem;
             line-height: 1.7;
         }
@@ -228,10 +220,8 @@
         .page-card {
             grid-column: span 3;
             padding: 20px;
-            border-radius: 22px;
-            background: rgba(255, 255, 255, 0.78);
-            border: 1px solid rgba(148, 163, 184, 0.16);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+            background: #000;
+            border: 1px solid #fff;
         }
 
         .page-card h2 {
@@ -241,13 +231,13 @@
 
         .page-card p {
             margin: 0;
-            color: #475569;
+            color: rgba(255, 255, 255, 0.88);
             line-height: 1.65;
         }
 
         .page-card--featured {
             grid-column: span 6;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(238, 242, 255, 0.88));
+            background: #000;
         }
 
         @media (max-width: 900px) {
@@ -264,7 +254,6 @@
         @media (max-width: 640px) {
             .page-surface {
                 padding: 20px;
-                border-radius: 22px;
             }
         }
 
@@ -280,7 +269,7 @@
         }
 
         .Company{
-            color: #1c1c1a;
+            color: #fff;
         }
     </style>
 </head>
@@ -294,6 +283,7 @@
 
         <ul class="site-nav__links">
             <li><a href="/" class="{{ request()->is('/') ? 'is-active' : '' }}">Home</a></li>
+            <li><a href="/ideas" class="{{ request()->is('ideas') ? 'is-active' : '' }}">Ideas</a></li>
             <li><a href="/about" class="{{ request()->is('about') ? 'is-active' : '' }}">About</a></li>
         </ul>
     </div>
