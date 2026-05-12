@@ -130,7 +130,11 @@
         .page-surface {
             min-height: calc(100vh - 140px);
             padding: clamp(28px, 4vw, 56px);
-            background: #000;
+            background-color: #000;
+            background-image: url('/images/monogram-line-seamless-pattern.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
             border: 1px solid #fff;
         }
 

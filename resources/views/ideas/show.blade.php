@@ -4,7 +4,8 @@
         <h1 class="text-2xl font-bold">Your IDEA 🔥</h1>
 
         <div class="mt-6 flex items-center gap-x-6 ">
-            <p>{{$idea->description}}</p>
+            <p  class="block border border-white bg-black p-3 text-white transition-colors hover:bg-white hover:text-black">{{$idea->description}}</p>
+
         </div>
         <div
             class="mt-6 flex items-center gap-x-6 ">
