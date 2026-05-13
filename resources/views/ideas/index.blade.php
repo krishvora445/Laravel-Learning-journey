@@ -1,6 +1,5 @@
 <x-layout title="Ideas">
-
-    <div class="page-grid mt-8">
+    <div class="page-grid mt-4">
         <div class="page-card col-span-full md:col-span-6">
             <h2>Your IDEAS 🔥 <a href="/ideas/create" class="text-2xl pl-30 ">+</a></h2>
             @if($ideas->count())
