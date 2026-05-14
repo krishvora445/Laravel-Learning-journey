@@ -22,8 +22,35 @@
         </ul>
     </div>
     <div class="navbar-end gap-0.5">
+{{--        @guest()--}}
+{{--        <a class="btn" href="/register"><img class="text-3xl pb-2" src="/public/images/addIcon.png" alt="+"/></a>--}}
+{{--        <a class="btn" href="/register">Register</a>--}}
+{{--        <a class="btn" href="/login">Log In</a>--}}
+{{--        @endguest--}}
+{{--        @auth()--}}
+{{--        <a class="btn" href="/ideas/create"><img class="text-3xl pb-2" src="/public/images/addIcon.png" alt="+"/></a>--}}
+{{--                <form action="/logout" method="post">--}}
+{{--                    @csrf--}}
+{{--                    @method('DELETE')--}}
+{{--                    <button class="btn" type="submit">Logout</button>--}}
+{{--                </form>--}}
+{{--        @endauth--}}
+
+
+        @auth()
         <a class="btn" href="/ideas/create"><img class="text-3xl pb-2" src="/public/images/addIcon.png" alt="+"/></a>
-        <a class="btn" href="/">Register</a>
+                <form action="/logout" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn" type="submit">Logout</button>
+                </form>
+        @else
+            <a class="btn" href="/register"><img class="text-3xl pb-2" src="/public/images/addIcon.png" alt="+"/></a>
+            <a class="btn" href="/register">Register</a>
+            <a class="btn" href="/login">Log In</a>
+
+        @endauth
+
     </div>
 </div>
 
