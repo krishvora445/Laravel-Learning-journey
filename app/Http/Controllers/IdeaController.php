@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\IdeaRequest;
 use App\Models\Idea;
+use Illuminate\Support\Facades\Auth;
 
 class IdeaController extends Controller
 {
@@ -11,7 +12,7 @@ class IdeaController extends Controller
      */
     public function index()
     {
-        $ideas = Idea::all();
+        $ideas = Idea::query()->where('user_id', Auth::id())->get();
 
         return view('ideas.index', [
             'ideas' => $ideas
@@ -35,13 +36,13 @@ class IdeaController extends Controller
      */
     public function store(IdeaRequest $request)
     {
-//        $request->validate([
-//            'description' => ['required','min:6'],
-//        ]);
+
 
         Idea::create([
             'description' => request('description'),
             'state' => 'pending',
+            'user_id' => Auth::id()
+//            'user_id' => Auth::user() //to access user of current session
         ]);
 
         return redirect('/ideas');
