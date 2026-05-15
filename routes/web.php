@@ -13,6 +13,7 @@ Route::get('/ideas', [IdeaController::class, 'index']);
 Route::get('/ideas/create', [IdeaController::class, 'create']);
 Route::post('/ideas',[IdeaController::class, 'store']);
 Route::get('/ideas/{idea}',[IdeaController::class, 'show']);
+//Route::get('/ideas/{idea}/edit',[IdeaController::class, 'edit'])->can('update', 'idea');
 Route::get('/ideas/{idea}/edit',[IdeaController::class, 'edit']);
 Route::patch('/ideas/{idea}',[IdeaController::class, 'update']);
 Route::delete('/ideas/{idea}', [IdeaController::class, 'destroy']);
@@ -29,13 +30,5 @@ Route::post('/login',[SessionController::class ,'store']);
 
 });
 
-//Route::get('/admin',function () {
-//    return 'this is admin page';
-//})->can('view-admin');
-
-Route::get('/admin',function () {
-    Gate::authorize('view-admin');
-    return 'this is admin page';
-});
 
 
