@@ -29,4 +29,13 @@ Route::post('/login',[SessionController::class ,'store']);
 
 });
 
+//Route::get('/admin',function () {
+//    return 'this is admin page';
+//})->can('view-admin');
+
+Route::get('/admin',function () {
+    Gate::authorize('view-admin');
+    return 'this is admin page';
+});
+
 

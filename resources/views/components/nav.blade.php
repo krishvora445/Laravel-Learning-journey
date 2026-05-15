@@ -14,6 +14,9 @@
                 <li><a href="/login">Ideas</a></li>
                 @endauth
                 <li><a href="/about">About</a></li>
+                @can('view-admin')
+                    <li><a href="/admin">Admin</a></li>
+                @endcan
             </ul>
         </div>
         <a class="btn btn-ghost text-xl">The Idea Company</a>
@@ -27,24 +30,12 @@
                 <li><a href="/login">Ideas</a></li>
             @endauth
             <li><a href="/about">About</a></li>
+            @can('view-admin')
+            <li><a href="/admin">Admin</a></li>
+            @endcan
         </ul>
     </div>
     <div class="navbar-end gap-0.5">
-{{--        @guest()--}}
-{{--        <a class="btn" href="/register"><img class="text-3xl pb-2" src="/public/images/addIcon.png" alt="+"/></a>--}}
-{{--        <a class="btn" href="/register">Register</a>--}}
-{{--        <a class="btn" href="/login">Log In</a>--}}
-{{--        @endguest--}}
-{{--        @auth()--}}
-{{--        <a class="btn" href="/ideas/create"><img class="text-3xl pb-2" src="/public/images/addIcon.png" alt="+"/></a>--}}
-{{--                <form action="/logout" method="post">--}}
-{{--                    @csrf--}}
-{{--                    @method('DELETE')--}}
-{{--                    <button class="btn" type="submit">Logout</button>--}}
-{{--                </form>--}}
-{{--        @endauth--}}
-
-
         @auth()
         <a class="btn" href="/ideas/create"><img class="text-3xl pb-2" src="/public/images/addIcon.png" alt="+"/></a>
                 <form action="/logout" method="post">
@@ -63,8 +54,3 @@
 </div>
 
 
-{{--        <ul class="site-nav__links">--}}
-{{--            <li><a href="/" class="{{ request()->is('/') ? 'is-active' : '' }}">Home</a></li>--}}
-{{--            <li><a href="/ideas" class="{{ request()->is('ideas') ? 'is-active' : '' }}">Ideas</a></li>--}}
-{{--            <li><a href="/about" class="{{ request()->is('about') ? 'is-active' : '' }}">About</a></li>--}}
-{{--        </ul>--}}
