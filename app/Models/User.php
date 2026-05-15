@@ -37,9 +37,9 @@ class User extends Authenticatable
 
     public function isAdmin(): bool
     {
-//        return $this->role === 'admin';
         return $this->id === 1;
     }
+
 
     /**
      * Get the attributes that should be cast.

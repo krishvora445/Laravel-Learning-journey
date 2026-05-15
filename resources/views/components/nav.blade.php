@@ -49,7 +49,6 @@
             <a class="btn" href="/login">Log In</a>
 
         @endauth
-
     </div>
 </div>
 
