@@ -5,7 +5,7 @@ use App\Http\Controllers\Auth\SessionController;
 use App\Http\Controllers\IdeaController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'Home');
+Route::view('/', 'home');
 Route::view('/about', 'about');
 
 Route::middleware('auth')->group(function () {
