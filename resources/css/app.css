@@ -6,8 +6,8 @@
 @source '../**/*.js';
 
 
-@plugin "daisyui"{
-    themes: dracula
+@plugin "daisyui" {
+    themes: night,black, dracula, light, corporate, winter, garden;
 }
 
 @theme {
