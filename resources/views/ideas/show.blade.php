@@ -16,7 +16,7 @@
                 </x-idea-card>
 
                 <div class="card-actions justify-end">
-                    <a href="{{ url('/ideas/' . $idea->id . '/edit') }}" class="btn btn-primary">Edit idea</a>
+                    <a href="{{ url('/ideas/' . $idea->id . '/edit') }}" data-test="edit-idea" class="btn btn-primary">Edit idea</a>
                 </div>
             </div>
         </div>

@@ -29,7 +29,7 @@
                         <x-forms.error name="password" />
                     </label>
 
-                    <button class="btn btn-primary w-full mt-4" type="submit">Register</button>
+                    <button class="btn btn-primary w-full mt-4" data-test="register-button" type="submit">Register</button>
                 </form>
 
                 <div class="divider">or</div>

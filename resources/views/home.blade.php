@@ -1,5 +1,5 @@
 <x-layout title="Home">
-    <section class="hero rounded-box border border-base-300 bg-base-100 shadow-sm">
+        <section class="hero rounded-box border border-base-300 bg-base-100 shadow-sm">
         <div class="hero-content flex-col gap-8 lg:flex-row-reverse lg:items-center lg:justify-between">
             <div class="max-w-md rounded-box bg-base-200 p-6 shadow-inner">
                 <p class="mb-4 text-sm uppercase tracking-[0.25em] text-primary">At a glance</p>

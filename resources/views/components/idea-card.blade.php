@@ -7,7 +7,7 @@
 @endphp
 
 @if ($href)
-    <a href="{{ $href }}" {{ $attributes->merge(['class' => $classes]) }}>
+    <a href="{{ $href }}" data-test="shows-single-idea" {{ $attributes->merge(['class' => $classes]) }}>
         <div class="card-body gap-3">
             <p class="text-sm leading-6 text-base-content/80">{{ $slot }}</p>
             <div class="card-actions justify-end">
