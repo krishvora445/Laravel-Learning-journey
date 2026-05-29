@@ -5,8 +5,8 @@ use App\Models\User;
 it('register a user', function () {
         $page = visit('/register')
         ->fill('name', 'KrishVora')
-        ->fill('email', 'KrishVora784@gmail.com')
-        ->fill('password', 'KrishVora@784')
+        ->fill('email', '')
+        ->fill('password', '')
 
         ->press('@register-button')
         ->assertPathIs('/ideas');
