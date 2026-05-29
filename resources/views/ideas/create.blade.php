@@ -1,22 +1,37 @@
 <x-layout title="Ideas">
-
-    <div class="page-grid mt-8">
-        <div class="page-card page-card--featured">
-            <form method="POST" action="/ideas">
-                @csrf
-                <div class="col-span-full">
-                    <label for="description" class="block text-sm/6 font-medium text-white">Create New Idea</label>
-                    <div class="mt-2">
-                        <textarea id="description" name="description" rows="3" class="
-                        block w-full border bg-black px-3 py-1.5 text-base outline-none placeholder:text-white/60 focus:bg-white focus:text-black sm:text-sm/6 @error('description') textarea-error border-red-500 @enderror"></textarea>
-                        <x-forms.error name="description" />
-                    </div>
-                    <p class="mt-3 text-sm/6 text-white/80">I have an Idea, you want to save for later?</p>
-                </div>
-                <div class="mt-6 flex items-center gap-x-6">
-                    <button type="submit" class="border border-white bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Save Idea</button>
-                </div>
-            </form>
+    <section class="mx-auto max-w-3xl space-y-6">
+        <div class="rounded-box border border-base-300 bg-base-100 p-6 shadow-sm">
+            <p class="text-sm uppercase tracking-[0.25em] text-primary">Create</p>
+            <h1 class="mt-2 text-3xl font-bold">Add a new idea</h1>
+            <p class="mt-2 text-base-content/75">Write down your thought before it disappears.</p>
         </div>
-    </div>
+
+        <div class="card border border-base-300 bg-base-100 shadow-lg">
+            <div class="card-body">
+                <form method="POST" action="{{ url('/ideas') }}" class="space-y-6">
+                    @csrf
+
+                    <label class="form-control w-full">
+                        <div class="label">
+                            <span class="label-text font-medium">Create New Idea</span>
+                        </div>
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="6"
+                            class="textarea textarea-bordered w-full @error('description') textarea-error @enderror"
+                            placeholder="I have an idea about..."
+                        ></textarea>
+                        <x-forms.error name="description" />
+                    </label>
+
+                    <p class="text-sm text-base-content/75">I have an idea, do you want to save it for later?</p>
+
+                    <div class="card-actions justify-end">
+                        <button type="submit" class="btn btn-primary">Save idea</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 </x-layout>

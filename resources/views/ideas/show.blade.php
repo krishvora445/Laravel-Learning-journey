@@ -1,15 +1,25 @@
-<x-layout title="Home">
+<x-layout title="Idea details">
+    <section class="space-y-6">
+        <div class="flex items-center justify-between gap-4 rounded-box border border-base-300 bg-base-100 p-6 shadow-sm">
+            <div>
+                <p class="text-sm uppercase tracking-[0.25em] text-primary">Idea details</p>
+                <h1 class="mt-2 text-3xl font-bold">Your idea 🔥</h1>
+            </div>
 
-    <div class=" text-white m-3">
-        <h1 class="text-2xl font-bold">Your IDEA 🔥</h1>
-        <div class="mt-6 flex items-center gap-x-6 ">
-            <x-idea-card >
-                {{$idea->description}}
-            </x-idea-card>
+            <a href="{{ url('/ideas') }}" class="btn btn-outline btn-sm">Back to ideas</a>
         </div>
-        <div class="mt-6 flex items-center gap-x-6 ">
-        <a href="/ideas/{{$idea->id}}/edit" type="submit" class="border border-white bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Edit</a>
+
+        <div class="card border border-base-300 bg-base-100 shadow-lg">
+            <div class="card-body gap-6">
+                <x-idea-card>
+                    {{ $idea->description }}
+                </x-idea-card>
+
+                <div class="card-actions justify-end">
+                    <a href="{{ url('/ideas/' . $idea->id . '/edit') }}" data-test="edit-idea" class="btn btn-primary">Edit idea</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 </x-layout>
 

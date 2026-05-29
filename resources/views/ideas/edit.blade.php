@@ -1,29 +1,47 @@
 <x-layout title="Ideas">
 
-    <div class="page-grid mt-8">
-        <div class="page-card page-card--featured">
-            <form method="POST" action="/ideas/{{$idea->id}}" id="edit-form">
-                @csrf
-                @method('PATCH')
-                <div class="col-span-full">
-                    <label for="description" class="block text-sm/6 font-medium text-white">Edit Your Idea</label>
-                    <div class="mt-2">
-                        <textarea id="description" name="description" rows="3" class="block w-full border border-white bg-black px-3 py-1.5 text-base text-white outline-none placeholder:text-white/60 focus:bg-white focus:text-black sm:text-sm/6">{{$idea->description}}</textarea>
+    <section class="mx-auto max-w-3xl space-y-6">
+        <div class="rounded-box border border-base-300 bg-base-100 p-6 shadow-sm">
+            <p class="text-sm uppercase tracking-[0.25em] text-primary">Edit</p>
+            <h1 class="mt-2 text-3xl font-bold">Update your idea</h1>
+            <p class="mt-2 text-base-content/75">Refine the details before saving the next version.</p>
+        </div>
+
+        <div class="card border border-base-300 bg-base-100 shadow-lg">
+            <div class="card-body">
+                <form method="POST" action="{{ url('/ideas/' . $idea->id) }}" id="edit-form" class="space-y-6">
+                    @csrf
+                    @method('PATCH')
+
+                    <label class="form-control w-full">
+                        <div class="label">
+                            <span class="label-text font-medium">Edit Your Idea</span>
+                        </div>
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="6"
+                            class="textarea textarea-bordered w-full @error('description') textarea-error @enderror"
+                        >{{ $idea->description }}</textarea>
                         <x-forms.error name="description" />
+                    </label>
+                </form>
+
+                <div class="card-actions justify-between">
+                    <a href="{{ url('/ideas/' . $idea->id) }}" class="btn btn-ghost">Cancel</a>
+
+                    <div class="flex flex-wrap gap-3">
+                        <button type="submit" form="edit-form" class="btn btn-primary">Update</button>
+
+                        <form method="POST" action="{{ url('/ideas/' . $idea->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-outline btn-error">Delete</button>
+                        </form>
                     </div>
                 </div>
-            </form>
-
-            <div class="mt-6 flex items-center gap-x-4">
-                <button type="submit" form="edit-form" class="border border-white bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Update</button>
-
-                <form method="POST" action="/ideas/{{$idea->id}}" class="m-0">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="border border-white bg-black px-4 py-2 text-sm font-semibold text-white hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Delete</button>
-                </form>
             </div>
         </div>
-    </div>
+    </section>
 
 </x-layout>
